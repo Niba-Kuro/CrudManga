@@ -45,6 +45,7 @@
   "devDependencies": {
     "concurrently": "^7.1.0",
     "electron": "^18.0.3",
+    "electron-reload": "^2.0.0-alpha.1",
     "foreman": "^3.0.1",
     "wait-on": "^6.0.1"
   }
