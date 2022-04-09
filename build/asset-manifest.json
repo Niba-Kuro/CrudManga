@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "http://192.168.0.2:5000/static/js/main.5dc1135e.js",
+    "index.html": "http://192.168.0.2:5000/index.html",
+    "main.5dc1135e.js.map": "http://192.168.0.2:5000/static/js/main.5dc1135e.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.5dc1135e.js"
+  ]
+}

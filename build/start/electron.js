@@ -1,4 +1,14 @@
 const {app, BrowserWindow} = require("electron");
+// const path = require("path");
+// const url = require("url");
+// const { exec } = require("child_process");
+
+// if(process.env.NODE_ENV !== "production"){
+    // require("electron-reload")(__dirname, {
+    //     electron: path.join(__dirname, "../node_modules", ".bin", "electron")
+    // });
+    // require("electron-reload")(__dirname, {});
+// }
 
 // ============================================================================================
 // READY
@@ -12,9 +22,10 @@ app.on("ready", function() {
         // title: "Manga crud",
         // hasShadow: false,
         webPreferences: {
-            nodeIntegration: true, 
-            contextIsolation: false,
-            enableRemoteModule: true
+            nodeIntegration: true
+            // nodeIntegration: true, 
+            // contextIsolation: false,
+            // enableRemoteModule: true
         }
     });
 
@@ -28,6 +39,7 @@ app.on("ready", function() {
     require("@electron/remote/main").enable(mainWindows.webContents);
 
 });
+
 
 // ============================================================================================
 // CLOSE
