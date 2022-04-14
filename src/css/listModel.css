@@ -1,0 +1,151 @@
+.sheet-list{
+    margin-top: 20px;   
+    overflow: hidden;
+}
+
+.sheet-list-frame-with-filter{
+    height: 685px;
+}
+
+.sheet-list-frame-without-filter{
+    height: 450px;
+    padding-top: 20px;
+}
+
+.sheet-list-frame{
+    border: 2px solid black;
+    width: 505px;
+}
+
+.sheet-list-frame-filter{
+    height: 40px;
+    width: 520px;
+    position: relative;
+    left: -50px;
+    top: 10px;
+    margin-top: 10px;
+    transform: skew(20deg);
+    border: 2px solid black;
+}
+
+.sheet-list-frame-filter input{
+    transform: skew(-20deg);
+    background-color: white;
+    color: black;
+    width: 70%;
+    padding: 5px;
+    border: none;
+    resize: none;
+    position: relative;
+    top: -15px;
+}
+
+.list-manga-model{
+    position: fixed;
+    overflow: auto;
+    max-height: 400px;
+    width: 400px;
+    padding: 0;
+    margin: 4px;
+    margin-left: 70px;
+    z-index: 2;
+}
+
+.list-manga-model ul{    
+    padding: 0px;
+}
+
+.list-manga-model ul li{
+    background-color: white;
+    color: black;
+    padding: 5px;
+    text-align: left;
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list-manga-model ul li:last-child{
+    cursor: initial;
+}
+
+.list-manga-content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0;
+}
+
+.list-manga-content div{
+    width: 240px;
+}
+
+.list-manga-content h3{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.list-manga-content img{
+    width: 50px;
+    height: 60px;
+}
+
+.list-manga-id{
+    max-width: 60px;
+}
+
+.list-manga-id h4{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.list-manga-model ul li:hover:not(.list-manga-model ul li:last-child){
+    background-color: rgb(190, 189, 189);
+}
+
+.sheet-list-title{
+    position: relative;
+    width: 520px;
+    left: -50px;
+    top: 10px;
+    border: 2px solid black;
+    transform: skew(20deg);
+    display: flex;
+}
+
+.sheet-list-icon-title{
+    background-color: white;
+    transform: skew(-20deg);
+    width: 50px;
+    margin: 0px;
+}
+
+.sheet-list-icon-filter{
+    background-color: white;
+    transform: skew(-20deg);
+    width: 40px;
+}
+
+.sheet-list-icon-title:nth-child(1){
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.sheet-list-icon-filter:nth-child(1){
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.sheet-list-title h3{
+    color: black;
+    transform: skew(-20deg);
+    margin-left: 10px;
+}
+
+.sheet-container{
+    display: flex;
+    flex-wrap: wrap;
+}

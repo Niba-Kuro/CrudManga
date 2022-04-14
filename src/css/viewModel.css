@@ -1,0 +1,102 @@
+.view-id{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.view-tittle{
+    padding: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.view-tittle h3{
+    padding: 2px;
+    border: 2px solid black;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.view-tittle h4{
+    padding: 1px;
+    border: 2px solid black;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.view-tittle h3:first-child{
+    border-bottom: none;
+}
+
+.view-data{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.view-data-img{
+    width: 180px;
+    margin: 0;
+    margin-left: 15px;
+}
+
+.view-data-img img{
+    border: 2px solid black;
+    width: 180px;
+    height: 265px;
+    cursor: pointer;
+}
+
+.view-data-info{
+    display: flex;
+    flex-wrap: wrap;
+    width: 370px;
+}
+
+.view-list{
+    border: 2px solid black;
+    margin: 15px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+.view-list-title{
+    position: fixed;
+    border: 2px solid black;
+    padding: 5px;
+    background-color: white;
+    margin-top: -30px;
+    margin-left: -5px;
+}
+
+.view-list-data{
+    margin: 5px;
+    margin-top: 10px;
+}
+
+.view-synopsis{
+    border: 2px solid black;
+    margin: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 10px;
+}
+
+.view-synopsis-title{
+    position: fixed;
+    border: 2px solid black;
+    padding: 5px;
+    background-color: white;
+    margin-top: -30px;
+    margin-left: -5px;
+}
+
+.view-synopsis-data{
+    padding: 5px;
+    height: 120px;
+    overflow: auto;
+}
+

@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # IMPORT=====================================================================================================================
 from sendEmail import sendEmail
 import sys

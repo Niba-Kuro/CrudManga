@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # IMPORT=====================================================================================================================
 import pymongo
 from eventException import eventException 
@@ -10,6 +12,8 @@ class mongoDb:
     collection                  = None
     collectionSequence          = None
     items                       = None
+    readItems                   = None
+    auxOptions                  = None
     database                    = "CrudManga"
     url                         = "localhost"
     port                        = 27017
@@ -18,7 +22,7 @@ class mongoDb:
         try:
             self.client     = MongoClient(self.url, port = self.port)
             self.db         = self.client[self.database]
-            self.collection = self.db[connection]
+            self.collection = self.db[connection.title()]
         except Exception as ex:
             eventException(ex)
 # METHOD=====================================================================================================================
@@ -33,10 +37,22 @@ class mongoDb:
         except Exception as ex:
             eventException(ex)
 
-    def readItems(self):
+    def readItem(self, query = None):
         try:
+            if "$options_filter" in query:
+                self.auxOptions = query["$options_filter"]
+                self.readItems = "self.collection.find(query)"
+                if "$limit" in self.auxOptions:
+                    self.readItems = self.readItems + ".limit("+str(self.auxOptions["$limit"])+")"
+                if "$sort" in self.auxOptions:
+                    self.readItems = self.readItems + ".sort('_id',"+str(self.auxOptions["$sort"])+")"
+                if "$skip" in self.auxOptions:
+                    self.readItems = self.readItems + ".skip("+str(self.auxOptions["$skip"])+")"
+                del query["$options_filter"]
+            else:
+                self.readItems = "self.collection.find(query)" 
             self.items = []
-            for auxItem in self.collection.find():
+            for auxItem in eval(self.readItems):
                 self.items.append(auxItem)
             return self.items
         except Exception as ex:
@@ -54,11 +70,13 @@ class mongoDb:
             self.collection.delete_one(item)
             return {'status': 0, 'message-en': 'The data has been deleted.', 'message-es': 'Se ha eliminado el dato.'}
         except Exception as ex:
-            eventException(ex)            
+            eventException(ex)   
 # CLOSE CLASS================================================================================================================
-# TEST CLASS================================================================================================================
-# test = mongoDb("Autor")
+# TEST CLASS=================================================================================================================
+# test = mongoDb("genero")
 # print(test.createItem({"_id": 0, "nombre":"prueba"}))
-# print(test.readItems())
+# print(test.readItem({}))
+# print(test.readItem({"$options_filter": {"$limit" : 1, "$sort" : -1}, "genero": "Romance"}))
 # print(test.updateItem({"_id": 27, "nombre":"pruebaActualizar"}))
 # print(test.deleteItem({"_id": 27}))
+# print(test.findItems({"nombre": {"$regex" : "ón", "$options": "ig"}}))

@@ -1,0 +1,30 @@
+.sheet-controller{
+    padding: 20px;
+    display: flex;
+    overflow: hidden;
+}
+
+.btn-model-controller{
+    height: 160px;
+    width: 100px;
+    border: 2px solid black;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.img-effect{
+    position: relative;
+    height: 160px;
+    width: 100px;
+    opacity: 0;
+}
+
+.img-effect:hover{
+    opacity: 1;
+}
+
+.img-icons{
+    position: relative;
+    top: -130px;
+    z-index: -1;
+}

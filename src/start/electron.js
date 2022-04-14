@@ -18,7 +18,7 @@ app.on("ready", function() {
         }
     });
 
-    mainWindows.loadURL('http://localhost:5000');
+    mainWindows.loadURL("http://192.168.0.2:5000");
     mainWindows.webContents.openDevTools();
     // mainWindows.setMenu(null);
     // mainWindows.setMenuBarVisibility(false);

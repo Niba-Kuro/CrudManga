@@ -1,0 +1,66 @@
+.sheet-shadow{
+    margin-top: 20px;
+    height: 720px;
+    width: 580px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: absolute;
+    z-index: -2;
+    display: flex;
+}
+
+.sheet-model{
+    height: 720px;
+    width: 580px;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.2), 1px 1px 3px rgba(0,0,0,0.1);    
+    background-color: white;
+    transform-origin: center left;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.back-sheet-model{
+    margin-left: -580px;
+}
+
+.back-sheet-model a:first-child{
+    margin-top: 20px;
+}
+
+.back-sheet-model a, .back-sheet-model button{
+    float: right;
+    text-align: end;
+    border: 2px solid black;
+    margin: 20px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    width: 480px;
+    padding: 20px;
+    padding-bottom: 15px;
+    font-family: Teko-Bold;
+    font-size: 25px;
+}   
+
+.back-sheet-model a:hover, .back-sheet-model button:hover{
+    background-color: black;
+    color: white;
+}
+
+.back-sheet-credits{
+    margin: 10px;
+    text-align: end;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.back-sheet-credits h3{
+    text-align: center;
+    padding: 15px;
+}
+
+.back-sheet-credits img{
+    width: 30px;
+    cursor: pointer;
+}

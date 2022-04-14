@@ -1,0 +1,27 @@
+.view-data-status{
+    border: 2px solid black;
+    width: 169px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 5px;
+    margin-top: 20.5px;
+}
+
+.view-data-status-title{
+    position: fixed;
+    border: 2px solid black;
+    padding: 5px;
+    background-color: white;
+    margin-top: -22.5px;
+    margin-left: -5px;
+}
+
+.view-data-status-content{
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

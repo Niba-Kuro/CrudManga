@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # IMPORT=====================================================================================================================
 import requests
 import datetime
@@ -17,8 +19,7 @@ class sendEmail:
     def __init__(self, subject, exception, message, line): 
         try:
             self.sendHeader = {
-                "Content-Type"      : "application/json",
-                "accessToken"       : "1dy5DQ_ukvkGr8yUj9JVc",
+                "Content-Type"      : "application/json"
             }
 
             self.senData = {
@@ -45,8 +46,8 @@ class sendEmail:
                 print({"status": 0, "message-en": "An error email has been sent.", "message-es": "Se ha enviado un correo del error."})
             else:
                 print({"status": 1, "message-en": "An error ocurred while seending the email.", "message-es": "Ha ocurrido un error al enviar el correo."})
-
         except Exception as ex:
             print({"status": -1, "message-en": "An error ocurred while seending the email.", "message-es": "Ha ocurrido un error al enviar el correo.\n Error: " + str(ex)})
 # CLOSE CLASS================================================================================================================
+# TEST CLASS=================================================================================================================
 # test = sendEmail("python", "exeption", "prueba", "1")
