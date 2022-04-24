@@ -12,14 +12,14 @@ export function SheetModel({ prop }) {
     let optBack             = undefined;
     // CONDITIONS=========================================================================================================
     if (window.location.href.charAt(window.location.href.length - 1) !== "/") {
-        optBack = <button href="" onClick={() => navigate(-1)}>Atrás</button>
+        optBack = <button onClick={() => navigate(-1)}>Atrás</button>
     }
     // RETURN=============================================================================================================
     return (
         <>
             <div className="sheet-shadow back-sheet-model">
                 <div className="sheet-model">
-                    <Link to="/">Salir</Link>
+                    <Link to="#" onClick={() => {window.close();}}>Salir</Link>
                     <Link to="/">Inicio</Link>
                     <Link to="/">Configuración</Link>
                     {optBack}

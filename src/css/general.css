@@ -60,6 +60,10 @@ button {
     padding: 0px;
 }
 
+input[type='radio'], input[type='checkbox']{
+    width: 0px;
+}
+
 input[type='radio']:after,
 input[type='checkbox']:after {
     width: 10px;
@@ -141,4 +145,19 @@ img {
     padding: 5px;
     border-radius: 5px;
     margin: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.w-90{
+    width: 90% !important;
+}
+
+.w-480px{
+    width: 480px !important;
+}
+
+.hide{
+    display: none;
 }

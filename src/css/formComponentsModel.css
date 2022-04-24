@@ -1,0 +1,260 @@
+
+.view-form{
+    border: 2px solid black;
+    margin: 15px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.view-form-title{
+    position: fixed;
+    border: 2px solid black;
+    padding: 5px;
+    background-color: white;
+    margin-top: -30px;
+    margin-left: -5px;
+}
+
+.view-form-data{
+    margin: 5px;
+    white-space: nowrap;
+}
+
+.view-form-data input{
+    background-color: white;
+    color: black;
+    width: 98%;
+    padding: 5px;
+    border: none;
+    border-bottom: solid 1px gray;
+}
+
+.view-form-data textarea{
+    background-color: white;
+    color: black;
+    width: 98%;
+    padding: 5px;
+    border: none;
+    resize: none;
+    height: 120px;
+    border-bottom: solid 1px gray;
+}
+
+.view-form-data input[type="radio"]{
+    width: 10px;
+    margin-right: 0px;
+}
+
+.display-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.display-flex label{
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.list-form{
+    position: fixed;
+    overflow: auto;
+    max-height: 400px;
+    width: 515px;
+    max-height: 200px;
+    background-color: white;
+    padding: 0;
+    z-index: 2;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.list-form li:not(.optios-more){
+    text-align: center;
+    list-style: none;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.list-form li:not(.optios-more):hover{
+    background-color: rgb(190, 189, 189);
+}
+
+.cbx-div{
+    text-align: left;
+    font-family: Roboto-bold;
+    width: 100%;
+    font-size: 13px;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}
+
+.placeholder-cbx{
+    font-family: Roboto-bold;
+    color: rgb(0, 0, 0, 0.7);
+}
+
+.double-component{
+    width: 246px;
+    margin: 5px;
+    margin-bottom: 20px;
+}
+
+.double-component:first-child{
+    margin-left: 15px;
+}
+
+.list-date{
+    position: fixed;
+    overflow: auto;
+    background-color: white;
+    max-height: 400px;
+    width: 245px;
+    height: 300px;
+    margin-left: -4px;
+    padding: 0;
+    z-index: 2;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.list-date span{
+    font-family: Roboto-bold;
+    cursor: pointer;
+}
+ 
+.date-previous{
+    background-color: black;
+    color: white;
+    float: left;
+    border-radius: 100%;
+    width: 22px;
+}
+
+.date-next{
+    background-color: black;
+    color: white;
+    float: right;
+    border-radius: 100%;
+    width: 22px;
+}
+
+.list-date li{
+    text-align: center;
+    list-style: none;
+    color: black;
+    padding: 5px;
+    height: 22.25px;
+    line-height: 22.25px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.list-date-year{
+    width: 230px;
+    min-height: 23px;
+    max-height: 23px;
+    height: 23px;
+}
+
+.list-date-month{
+    width: 230px;
+    min-height: 23px;
+    max-height: 23px;
+    height: 23px;
+}
+
+.list-date-days{
+    width: 240px;
+    padding: 0 !important;
+}
+
+.list-date-days ul{
+    padding: 0;
+}
+
+.list-date .list-date-data{
+    margin: 0px;
+    width: 22.25px;
+    border: solid 1px white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.list-date-check{
+    color: white !important;
+    background-color: black;
+}
+
+.date-content-list{
+    width: 230px;
+    cursor: pointer;
+}
+
+.date-content-list:hover{
+    background-color: rgb(190, 189, 189);
+}
+
+.optios-more{
+    cursor: initial;
+    text-align: center;
+}
+
+.margin-double-flex{
+    margin-bottom: -20px;
+    margin-top: 20px; 
+}
+
+.view-form-list-data{
+    white-space: nowrap;
+    overflow-y: auto;
+    height: 40px;
+}
+
+.view-form-list-data ul{
+    padding: 0;
+}
+
+.view-form-list-data li{
+    padding-right: 0;
+}
+
+.view-form-list-data span{
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    margin: 0px;
+}
+
+.view-form-data button{
+    margin: 0;
+    padding: 0;
+}
+
+.view-form-data button img{
+    width: 50px;
+    position: fixed;
+    margin-top: -35px;
+}
+
+.view-form-button{
+    padding: 15px;
+    padding-bottom: 10px;
+    width: 95%;
+    font-family: Teko-Bold;
+    font-size: 25px;
+    border: 2px solid black;
+    margin-left: 15px;
+    margin-top: -10px;
+    /* margin-bottom: 20px; */
+}
+
+.view-form-button:hover{
+    color: white;
+    background-color: black;
+}

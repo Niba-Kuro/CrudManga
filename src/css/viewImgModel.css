@@ -1,0 +1,12 @@
+.view-img{
+    height: 680px;
+    width: 540px;
+    padding: 20px;
+}
+
+.view-img img{
+    border: 2px solid black;
+    height: 680px;
+    width: 535px;
+    object-fit: contain;
+}

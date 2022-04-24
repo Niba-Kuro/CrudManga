@@ -12,6 +12,8 @@
     "flask": "^0.2.10",
     "flask-cors": "^0.0.1",
     "jquery": "^3.6.0",
+    "numpy": "^0.0.1",
+    "pillow": "^0.0.9",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",

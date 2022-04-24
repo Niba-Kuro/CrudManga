@@ -42,6 +42,10 @@
     font-size: 25px;
 }   
 
+.back-sheet-model button{
+    width: 90.4%;
+}
+
 .back-sheet-model a:hover, .back-sheet-model button:hover{
     background-color: black;
     color: white;

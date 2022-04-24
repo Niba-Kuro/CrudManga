@@ -1,20 +1,90 @@
 // FUNCTIONS==============================================================================================================
-async function funcAjax(url, setState, item) {
-    let response = await fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
+const domain = "http://127.0.0.1:5000/";
+// FUNCTIONS==============================================================================================================
+async function funcAjax(url, item, setState = undefined, oneElement = false) {
+    let response    = await fetch(domain + url, {
+        method              : "POST",
+        headers             : {
+            "Content-Type"  : "application/json",
+            "Accept"        : "application/json"
         },
         body: JSON.stringify(item)
     });
-    let json = await response.json();
-    setState(json);
+    
+    let json        = await response.json();    
+
+    if(setState !== undefined){
+        if(oneElement){
+            setState(json[0]);
+        }else{
+            setState(json);
+        }
+    }
+
 }
 
 function funcOpenUrl(url) {
     // eslint-disable-next-line no-eval
     eval("funcUrl('" + url + "');");
+}
+
+function funcMonth(monthIndex = 0, lenguage = "esp"){
+    let month = {
+        "esp"   : ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+        "en"    : []
+    };
+    return month[lenguage.toLowerCase()][monthIndex];
+}
+
+function funcMangaModel(id = 0, json = undefined, nombre = "", nombre_jp = "", sinopsis = "", capitulos = "", tomo = "",
+                        publicacion = "", finalizacion = "", demografia = "", imagen = "", estado = "",
+                        autor = [], editorial = [], genero = [], link = []) {
+    
+    if(json !== undefined){
+        return {
+            "_id"           : json["_id"],
+            "nombre"        : json["nombre"],
+            "nombre_jp"     : json["nombre_jp"],
+            "sinopsis"      : json["sinopsis"],
+            "capitulos"     : json["capitulos"],
+            "tomo"          : json["tomo"],
+            "publicacion"   : json["publicacion"],
+            "finalizacion"  : json["finalizacion"],
+            "demografia"    : json["demografia"],
+            "imagen"        : json["imagen"],
+            "estado"        : json["estado"],
+            "autor"         : json["autor"],
+            "editorial"     : json["editorial"],
+            "genero"        : json["genero"],
+            "link"          : json["link"]
+        };
+    }
+    
+    return {
+        "_id"           : id,
+        "nombre"        : nombre,
+        "nombre_jp"     : nombre_jp,
+        "sinopsis"      : sinopsis,
+        "capitulos"     : capitulos,
+        "tomo"          : tomo,
+        "publicacion"   : publicacion,
+        "finalizacion"  : finalizacion,
+        "demografia"    : demografia,
+        "imagen"        : imagen,
+        "estado"        : estado,
+        "autor"         : autor,
+        "editorial"     : editorial,
+        "genero"        : genero,
+        "link"          : link
+    }
+}
+
+function funcImgModel() {
+    return {
+        "_id"       : undefined,
+        "nombre"    : undefined,
+        "imagen"    : undefined
+    }
 }
 
 function funcImg(opt){
@@ -28,24 +98,4 @@ function funcImg(opt){
     }
 }
 
-function funcModel() {
-    return {
-        "_id": undefined,
-        "autor": [],
-        "capitulos": undefined,
-        "demografia": undefined,
-        "editorial": [],
-        "estado": undefined,
-        "finalizacion": undefined,
-        "genero": [],
-        "imagen": undefined,
-        "link": [],
-        "nombre": undefined,
-        "nombre_jp": undefined,
-        "publicacion": undefined,
-        "sinopsis": undefined,
-        "tomo": undefined
-    }
-}
-
-export { funcAjax, funcOpenUrl, funcModel, funcImg };
+export { funcAjax, funcOpenUrl, funcMangaModel, funcImg, funcImgModel, funcMonth };

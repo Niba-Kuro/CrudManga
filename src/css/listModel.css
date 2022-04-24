@@ -49,6 +49,7 @@
     margin: 4px;
     margin-left: 70px;
     z-index: 2;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 .list-manga-model ul{    
@@ -56,18 +57,19 @@
 }
 
 .list-manga-model ul li{
+    text-align: center;
+    list-style: none;
+    background-color: white;
+}
+
+.list-manga-model ul li a{
     background-color: white;
     color: black;
-    padding: 5px;
     text-align: left;
     list-style: none;
     cursor: pointer;
     display: flex;
     flex-wrap: wrap;
-}
-
-.list-manga-model ul li:last-child{
-    cursor: initial;
 }
 
 .list-manga-content{
@@ -90,6 +92,7 @@
 .list-manga-content img{
     width: 50px;
     height: 60px;
+    padding: 5px;
 }
 
 .list-manga-id{
@@ -102,7 +105,7 @@
     white-space: nowrap;
 }
 
-.list-manga-model ul li:hover:not(.list-manga-model ul li:last-child){
+.list-manga-model ul li a:hover{
     background-color: rgb(190, 189, 189);
 }
 

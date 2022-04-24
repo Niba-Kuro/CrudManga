@@ -44,7 +44,7 @@
 
     //dragstart
     $(document).on("dragstart", function(e) {
-        if (e.target.tagName === 'IMG') {
+        if (e.target.tagName === "IMG" || e.target.tagName === "A") {
             e.preventDefault();
         }
     });

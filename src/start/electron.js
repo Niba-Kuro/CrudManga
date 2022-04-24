@@ -5,12 +5,12 @@ const {app, BrowserWindow} = require("electron");
 app.on("ready", function() {
     
     let mainWindows = new BrowserWindow({
-        width: 960,
-        height: 800,
+        // width: 960,
+        // height: 1000,
         // transparent: true, 
         // frame: false,
         // title: "Manga crud",
-        // hasShadow: false,
+        hasShadow: false,
         webPreferences: {
             nodeIntegration: true, 
             contextIsolation: false,

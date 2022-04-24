@@ -10,6 +10,16 @@
     display: flex;
 }
 
+.view-data-status .tooltip-model{
+    margin-left: -95px;
+}
+
+.view-tittle .tooltip-model{
+    width: 555px;
+    max-width: 555px;
+    margin-left: auto;
+}
+
 .tooltip-model p{
     border: 1px solid black;
     background: white;

@@ -12,6 +12,7 @@ class mongoDb:
     collection                  = None
     collectionSequence          = None
     items                       = None
+    count                       = None
     readItems                   = None
     auxOptions                  = None
     database                    = "CrudManga"
@@ -39,19 +40,30 @@ class mongoDb:
 
     def readItem(self, query = None):
         try:
+            self.items = []
+
             if "$options_filter" in query:
                 self.auxOptions = query["$options_filter"]
-                self.readItems = "self.collection.find(query)"
-                if "$limit" in self.auxOptions:
+                self.readItems  = "self.collection.find(query)"
+                if "$project"   in self.auxOptions:                    
+                    self.readItems = "self.collection.find(query, "+str(self.auxOptions["$project"])+")"
+                if "$limit"     in self.auxOptions:
                     self.readItems = self.readItems + ".limit("+str(self.auxOptions["$limit"])+")"
-                if "$sort" in self.auxOptions:
+                if "$sort"      in self.auxOptions:
                     self.readItems = self.readItems + ".sort('_id',"+str(self.auxOptions["$sort"])+")"
-                if "$skip" in self.auxOptions:
+                if "$skip"      in self.auxOptions:
                     self.readItems = self.readItems + ".skip("+str(self.auxOptions["$skip"])+")"
+                if "$count"     in self.auxOptions:
+                    self.count     = self.auxOptions["$count"]
                 del query["$options_filter"]
             else:
                 self.readItems = "self.collection.find(query)" 
-            self.items = []
+                            
+            if self.count:
+                self.count = None    
+                self.count = {"count" : eval("self.collection.count_documents(query)")}
+                self.items.append(self.count)
+
             for auxItem in eval(self.readItems):
                 self.items.append(auxItem)
             return self.items
@@ -73,10 +85,11 @@ class mongoDb:
             eventException(ex)   
 # CLOSE CLASS================================================================================================================
 # TEST CLASS=================================================================================================================
-# test = mongoDb("genero")
+# test = mongoDb("manga")
 # print(test.createItem({"_id": 0, "nombre":"prueba"}))
 # print(test.readItem({}))
 # print(test.readItem({"$options_filter": {"$limit" : 1, "$sort" : -1}, "genero": "Romance"}))
+# print(test.readItem({"genero": "Romance", "$options_filter": {"$project" : {"_id": 1}, "$count": False}}))
 # print(test.updateItem({"_id": 27, "nombre":"pruebaActualizar"}))
 # print(test.deleteItem({"_id": 27}))
 # print(test.findItems({"nombre": {"$regex" : "ón", "$options": "ig"}}))

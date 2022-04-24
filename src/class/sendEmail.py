@@ -37,12 +37,13 @@ class sendEmail:
                 }
             }
 
-            self.session    = Session()
-            self.response   = Request(method = self.method, url = self.urlApi, headers = self.sendHeader, json = self.senData,)
-            self.prepped    = self.response.prepare()
-            self.result     = self.session.send(self.prepped, stream = False, verify = True, timeout = 5)
+            # self.session    = Session()
+            # self.response   = Request(method = self.method, url = self.urlApi, headers = self.sendHeader, json = self.senData,)
+            # self.prepped    = self.response.prepare()
+            # self.result     = self.session.send(self.prepped, stream = False, verify = True, timeout = 5)
 
-            if (self.result.status_code == requests.codes.ok):
+            # if (self.result.status_code == requests.codes.ok):
+            if (True):
                 print({"status": 0, "message-en": "An error email has been sent.", "message-es": "Se ha enviado un correo del error."})
             else:
                 print({"status": 1, "message-en": "An error ocurred while seending the email.", "message-es": "Ha ocurrido un error al enviar el correo."})

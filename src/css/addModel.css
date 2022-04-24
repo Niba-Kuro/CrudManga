@@ -1,0 +1,23 @@
+.form-model-title{
+    position: relative;
+    width: 520px;
+    left: -50px;
+    top: 10px;
+    border: 2px solid black;
+    transform: skew(20deg);
+    display: flex;
+    margin-bottom: 35px;
+}
+
+.form-model-title-icon{
+    transform: skew(-20deg);
+    width: 50px;
+    margin: 0px;
+    margin-left: 50px;
+}
+
+.form-model-title h3{
+    color: black;
+    transform: skew(-20deg);
+    margin-left: 10px;
+}
